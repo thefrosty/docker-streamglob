@@ -1,0 +1,19 @@
+*~
+.DS_Store
+.svn
+.cvs
+.env
+*.bak
+*.swp
+Thumbs.db
+
+# PhpStorm
+.idea/
+
+# Always include the build script #
+###################################
+!.env.example
+!build.sh
+!README.md
+!CHANGELOG.md
+!.gitignore

@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  streamglob:
+    build:
+      context: .
+      dockerfile: ./docker/python/Dockerfile
+    environment:
+      HELPERS_STREAMLINK_ARGS: "${HELPERS_STREAMLINK_ARGS}"
+      MLB_CREDENTIALS_USERNAME: "${MLB_CREDENTIALS_USERNAME}"
+      MLB_CREDENTIALS_PASSWORD: "${MLB_CREDENTIALS_PASSWORD}"
+      MLB_TEAMS_FAVORITE: "${MLB_TEAMS_FAVORITE}"
+      NHL_CREDENTIALS_USERNAME: "${NHL_CREDENTIALS_USERNAME}"
+      NHL_CREDENTIALS_PASSWORD: "${NHL_CREDENTIALS_PASSWORD}"
+      PLAYERS_VLC_ARGS: "${PLAYERS_VLC_ARGS}"
+    volumes:
+      - "./config.yml:/.config/streamglob/config.yaml"
+  vlc:
+    image: galexrt/vlc:latest
